@@ -1,0 +1,6 @@
+name: FallingBlocks
+version: '${project.version}'
+main: me.lagggpixel.fallingblocks.FallingBlocks
+api-version: '1.20'
+depend:
+  - GriefPrevention

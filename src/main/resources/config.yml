@@ -1,0 +1,28 @@
+# This option enables or disables the particles as the terrain is being regenerated.
+# Use true or false.
+particles: true
+
+# This option sets the delay time before the blocks start spawning in seconds.
+delay: 5
+
+# This option sets the respawn interval/rate of the blocks in ticks.
+interval: 5
+
+# This option sets percentage chance that a falling block will spawn.
+spawn chance: 25
+
+# This option sets whether to add randomness to the respawn rate.
+# (aka not constant and more jittery)
+# Use true or false.
+random respawn rate: true
+
+# This option sets whether the explosion drops items or not.
+# Use true or false.
+drops: false
+
+# Option to enable regeneration of the exploded blocks.
+regen terrain: true
+
+# Option to enable falling blocks when an explosion happens.
+# Use true or false.
+falling blocks: true
