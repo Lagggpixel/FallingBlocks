@@ -7,6 +7,7 @@ import me.ryanhamshire.GriefPrevention.Claim;
 import org.bukkit.Bukkit;
 import org.bukkit.Effect;
 import org.bukkit.Location;
+import org.bukkit.World;
 import org.bukkit.block.Block;
 import org.bukkit.entity.EntityType;
 import org.bukkit.entity.FallingBlock;
@@ -34,6 +35,14 @@ public class Listeners implements Listener {
     @EventHandler(priority = EventPriority.HIGHEST, ignoreCancelled = true)
     public void onEntityExplode(EntityExplodeEvent e) {
         Location location = e.getLocation();
+
+        if (location.getWorld().getEnvironment().equals(World.Environment.NETHER)) {
+            if (e.getEntity().getType().equals(EntityType.PRIMED_TNT) || e.getEntity().getType().equals(EntityType.MINECART_TNT)) {
+                e.setCancelled(false);
+                return;
+            }
+        }
+
         Claim claim = this.plugin.getGriefPrevention().dataStore.getClaimAt(location, true, null);
 
 
